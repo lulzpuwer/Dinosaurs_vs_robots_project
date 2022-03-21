@@ -2,15 +2,23 @@ from fleet import Fleet
 from herd import Herd
 
 class Battle_field:
-  def __init__(self) -> None:
-      self.fleet = Fleet
-      self.herd = Herd
+  def __init__(self):
+      self.fleet = Fleet()
+      self.herd = Herd()
+      pass
   
   def run_game(self):
     pass
 
   def display_welcome(self):
-    pass
+    print('WELCOME TO DINOSAURS VS ROBOTS!')
+    choose_faction = print(input('Would you like to play "dinosuars" or "robots": '))
+    if choose_faction == 'dinosuars':
+      current_faction = self.herd
+    else:
+      current_faction = self.fleet
+    return current_faction
+
 
   def battle(self):
     pass
