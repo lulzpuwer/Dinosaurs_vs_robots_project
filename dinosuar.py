@@ -1,17 +1,19 @@
-from fleet import Fleet
+import random
+from Dinosaurs_vs_robots_project.weapon import Weapon
+from robot  import Robot
+from weapon import weapon
 
 class Dinosaur:
-  def __init__(self, name, atk_power):
+  def __init__(self, name):
     self.name = name
-    self.atk_power = atk_power
+    self.atk_power = Weapon(input(' Pick your attack!: '), random.randrange(0, 35))
     self.health = 100
     pass
 
-  def attak(self, atk_power):
-    opponent_health = Fleet.__init__[0 or 1 or 2]
-    damage = atk_power
-    if damage > 0:
-      opponent_health -= damage
-      print(f'You deal {damage}. Your opponenet is at {opponent_health} current HP')
+  def attak(self):
+    opponent_health = Robot[0 or 1 or 2]
+    if self.atk_power > 0:
+      opponent_health -= self.atk_power
+      print(f'You deal {self.atk_power}. Your opponenet is at {opponent_health} current HP')
     else:
       print(f'You dealt NO damage! Your opponenet is at {opponent_health} current HP')

@@ -1,16 +1,17 @@
+import random
 import weapon
-from dinosuar import Dinosaur
+from herd import Herd
 
 class Robot:
   def __init__(self, name):
       self.name = name
       self.health = 100
-      self.weapon = weapon.Weapon('sword', 20)
+      self.weapon = weapon.Weapon(input('Name your weapon!: '), random.randrange(0, 35))
       pass
     
   
   def attak(self, atk_power):
-    opponent_health = Dinosaur.__init__[0 or 1 or 2]
+    opponent_health = Herd
     damage = atk_power
     if damage > 0:
       opponent_health -= damage

@@ -1,3 +1,5 @@
+from Dinosaurs_vs_robots_project.dinosuar import Dinosaur
+from Dinosaurs_vs_robots_project.weapon import Weapon
 from fleet import Fleet
 from herd import Herd
 
@@ -5,6 +7,7 @@ class Battle_field:
   def __init__(self):
       self.fleet = Fleet()
       self.herd = Herd()
+      self.current_faction = ''
       pass
   
   def run_game(self):
@@ -14,11 +17,12 @@ class Battle_field:
     print('WELCOME TO DINOSAURS VS ROBOTS!')
     choose_faction = print(input('Would you like to play "dinosuars" or "robots": '))
     if choose_faction == 'dinosuars':
-      current_faction = self.herd
-    else:
-      current_faction = self.fleet
-    return current_faction
-
+      self.current_faction = self.herd
+      self.fleet = self.fleet.robots.append(('Megatron', 100, Weapon), ('iron man', 100, Weapon), ('Mecha Godzilla', 100, Weapon))
+    elif choose_faction == 'robots':
+      self.current_faction = self.fleet
+      self.herd = self.herd.dinosaurs.append(('Godzilla', 100, Weapon), ('Mega Moth', 100, Weapon), ('Boar God of the Moutain', 100, Weapon))
+    return self.current_faction
 
   def battle(self):
     pass
