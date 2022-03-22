@@ -8,7 +8,7 @@ class Battle_field:
       pass
   
   def run_game(self):
-    pass
+    print(Battle_field.display_welcome(self))
 
   def display_welcome(self):
     print('WELCOME TO DINOSAURS VS ROBOTS!')
