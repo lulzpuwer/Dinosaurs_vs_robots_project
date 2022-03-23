@@ -1,19 +1,22 @@
 import random
-from Dinosaurs_vs_robots_project.weapon import Weapon
-from robot  import Robot
-from weapon import weapon
+from weapon import Weapon
 
 class Dinosaur:
   def __init__(self, name):
     self.name = name
-    self.atk_power = Weapon(input(' Pick your attack!: '), random.randrange(0, 35))
+    self.atk_power = Weapon(input(' Pick your attack!: '), random.randrange(20, 35))
     self.health = 100
     pass
 
-  def attak(self):
-    opponent_health = Robot[0 or 1 or 2]
+  def attack(self):
     if self.atk_power > 0:
-      opponent_health -= self.atk_power
-      print(f'You deal {self.atk_power}. Your opponenet is at {opponent_health} current HP')
+      print(f'You deal {self.atk_power}. ')
     else:
-      print(f'You dealt NO damage! Your opponenet is at {opponent_health} current HP')
+      print(f'You dealt NO damage! ')
+    return self.atk_power
+
+
+  def damage_recieved(self, damage):
+    self.health -= damage
+    print(f'{self.name} has recieved this amount of damage {damage}!')
+
